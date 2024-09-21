@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #e1e6ec;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer {
+            color: #fff;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <p>Loan Approval</p>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Welcome Message -->
+    <div class="container text-center mt-5">
+        <h1 class="animated-welcome">Welcome to Loan Approval Project</h1>
+    </div>
+
+    <!-- Input Block -->
+    <div class="container form-section"><br />
+        <h2 class="text-center">Enter Person's Details:-</h2> <br />
+        <form action="{{  url_for('predict')  }}" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="no_of_dependents">No. of dependents</label>
+                    <input type="number" class="form-control" name="dependents" id="no_of_dependents"
+                        placeholder="Enter no. of dependents">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="income_annum">Annual Income</label>
+                    <input type="text" class="form-control" name="income" id="income_annum"
+                        placeholder="Enter your annual income">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="loan_amount">Loan Amount</label>
+                    <input type="text" class="form-control" name="loan_amount" id="loan_amount"
+                        placeholder="Enter Loan Ammount">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="loan_term">Loan term</label>
+                    <input type="number" class="form-control" name="loan_term" id="loan_term"
+                        placeholder="Enter Loan Term">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cibil_score">Cibil Score</label>
+                    <input type="text" class="form-control" name="cibil_score" id="cibil_score"
+                        placeholder="Enter Cibil Score">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="residential_assets_value">Residential Assets Value</label>
+                    <input type="text" class="form-control" name="residential_assets_value"
+                        id="residential_assets_value" placeholder="Enter Residential Assets Value">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="commercial_assets_value">Commercial Assets Value</label>
+                    <input type="text" class="form-control" name="commercial_assets_value" id="commercial_assets_value"
+                        placeholder="Enter Commercial Assets Value">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="luxury_assets_value">Luxury Assets Value</label>
+                    <input type="text" class="form-control" name="luxury_assets_value" id="luxury_assets_value"
+                        placeholder="Enter Luxury Assets Value">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="bank_asset_value">Bank Assets Value</label>
+                    <input type="text" class="form-control" name="bank_asset_value" id="bank_asset_value"
+                        placeholder="Enter Bank Assets Value">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="education">Education</label>
+                    <select id="education" name="education"
+                        style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="1">Not Graduate</option>
+                        <option value="0">Graduate</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="self_employed">Self Employed</label>
+                    <select id="self_employed" name="self_employed"
+                        style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Submit Details</button>
+        </form>
+    </div>
+    <br />
+
+    <footer class="footer text-center">
+        <div class="container">
+            <h3>Thank You</h3>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
